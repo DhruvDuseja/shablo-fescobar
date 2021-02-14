@@ -1,0 +1,18 @@
+header {
+    margin-top: -2%;
+    height: 230px;
+    text-align: center;
+    padding: 1%;
+    background-color: beige;
+}
+
+.brand {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: 150%;
+    /* color: black; */
+}
+
+.image-style {
+    width: 4%;
+    height: 4%;
+}

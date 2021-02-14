@@ -1,0 +1,72 @@
+<div class="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                
+                <div class="card drop-shadow">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Choose an image</label>
+                                <select name="imageName" class="form-control" (change)="draw(false,$event)" [(ngModel)]="imageName">
+                                    <option [value]="image" *ngFor="let image of images">
+                                        {{ image }}
+                                    </option>
+                                </select>
+
+                                <label class="mt-2">Or import your own</label>
+                                <input type="file" class="form-control" accept="image/*" (change)="draw(true,$event)">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Top Text</label>
+                                <input name="topText" type="text" class="form-control" [(ngModel)]="topText" 
+                                    (keyup)="drawText()">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Bottom Text</label>
+                                <input name="bottomText" type="text" class="form-control" [(ngModel)]="bottomText"
+                                (keyup)="drawText()">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Text Color</label>
+                                        <color-chrome (onChangeComplete)="canvasTextColor($event)"></color-chrome>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Background Color</label>
+                                        <color-chrome (onChangeComplete)="canvasBgColor($event)"></color-chrome>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="mt-5 btn btn-outline-primary btn-block" (click)="downloadImage()">
+                                Download
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-md-6">
+                <canvas class="drop-shadow space" #memeCanvas width="700" height="800" style="background-color: #fff;">
+
+                </canvas>
+            </div>
+        </div>
+
+        <div class="container credit">
+            <div>Made with ❤️ by Dhruv Duseja</div>
+            <a href="https://www.github.com/DhruvDuseja" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/images/github.png" style="width: 4%; height: 4%;">
+            </a>
+        </div>
+
+    </div>
+</div>
