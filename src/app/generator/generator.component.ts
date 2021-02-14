@@ -134,7 +134,7 @@ export class GeneratorComponent implements OnInit {
     if(!upload || !event) {
       this.upload = false;
       var imageFile = this.nameToImageMap.get(this.imageName);
-      var filePath:string = "../assets/images/" + imageFile;
+      var filePath:string = "assets/images/" + imageFile;
 
       img.src = filePath;
       img.onload = function() {
